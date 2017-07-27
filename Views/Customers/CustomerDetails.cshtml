@@ -1,0 +1,46 @@
+﻿@model vidly.ViewModel.CustomerViewModel
+@{
+    ViewBag.Title = "CustomerDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CustomerDetails</h2>
+
+<table>
+    <thead>
+    <th>Customer Id</th>
+    <th>Customer Name</th>
+    <th>Customer Membership Type</th>
+    <th>Subscribed to newsletter?</th>
+    <th>Membership Type</th>
+    <th>BirthDate</th>
+
+    </thead>
+    <tbody>
+    <tr>
+        <td>@Model.Customer.Id</td>
+        <td>@Model.Customer.Name</td>
+        <td>@Model.Customer.MembershipTypeId</td>
+        <td>@Model.Customer.IsSubscribedToNewsLetter</td>
+        <td>@Model.Customer.MembershipType.Name</td>
+        <td>@Model.Customer.BirthDate</td>
+        
+    </tr><tr>
+        
+        
+    </tr><tr>
+        
+        
+    </tr><tr>
+        
+        
+    </tr><tr>
+        
+        
+    </tr><tr>
+        
+        
+    </tr>
+    </tbody>
+</table>
+
