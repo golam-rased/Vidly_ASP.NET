@@ -9,6 +9,8 @@ using vidly.ViewModel;
 
 namespace vidly.Controllers
 {
+
+    [Authorize]
     public class CustomersController : Controller
     {
 
@@ -55,6 +57,7 @@ namespace vidly.Controllers
             var membershipTypes = _context.MembershipTypes.ToList();
             var viewModel = new NewCustomerViewModel
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipTypes,
                 
             };
@@ -62,6 +65,7 @@ namespace vidly.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)

@@ -59,6 +59,15 @@ namespace vidly.Controllers
 
         public ActionResult Create(Movie movie)
         {
+
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new NewMovieViewModel
+                {
+                    Movie = movie
+                };
+                return View("NewMovie", viewModel);
+            }
             _context.Movies.Add(movie);
             _context.SaveChanges();
             return RedirectToAction("Index", "Movies");
